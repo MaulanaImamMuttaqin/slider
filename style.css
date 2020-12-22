@@ -14,14 +14,16 @@ body{
     border:1px solid;   
 }
 .wrapper{
-    height: 40vw;
-    width: 70vw;
-    overflow-y: scroll;
+    width:100%;
+    height: 100%;
+    overflow: hidden;
     display: grid;
+    grid-auto-flow: column;
     grid-template-columns: auto;
-    grid-auto-flow: auto;
+    
 }
-.slides img{
+
+.wrapper img{
     width:100%;
     height: 100%;
 }
