@@ -1,21 +1,27 @@
-let images = document.querySelectorAll(".slider-container img")
-let p = 0;
-function change(param){
-    if(param > 0){
-        p++
-    }else{
-        p--
-    }
-    if(p > images.length-1){
-        p = 0
-    }else if(p<0){
-        p = images.length-1
-    }
-    images.forEach(image => {
-        image.style.transform = `translate(-${p}00%,0)`
-    })
-}
+let images = document.querySelectorAll(".wrapper img"),
+    prev = document.querySelector("#left"),
+    next = document.querySelector("#right"),
+    slidePosition= 0,
+    firtSlide = images[0],
+    lastChild = images[images.length] ,
+    slideWidth = firtSlide.getBoundingClientRect().width;
 
-setInterval(()=>{
-   change(1)
-},2500)
+// prev.addEventListener("click", function(){shiftSlide(-1)})
+// next.addEventListener("click", function(){shiftSlide(1)})
+
+
+function shiftSlide(dirc){
+    if(dirc > 0 ){
+        slidePosition = slidePosition + slideWidth
+
+    }
+    else{
+        slidePosition = slidePosition - slideWidth
+    }
+    
+    images.forEach(image => {
+        image.style.right = slidePosition +"px"
+    })
+    
+    console.log(slidePosition)
+}

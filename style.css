@@ -3,27 +3,56 @@
 }
 body{
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .slider{
     height:40vw;
     width:70vw;
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
+    position: relative;
     border:1px solid;   
 }
 .wrapper{
     width:100%;
     height: 100%;
     overflow: hidden;
+    position: relative;
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: auto;
+    border:1px solid white;
     
 }
 
 .wrapper img{
-    width:100%;
+    width:70vw;
     height: 100%;
+    position:relative;
+    transition: all .5s;
+    right:0;
+}
+
+.controller > div{
+    height: 100%;
+    width:15%;
+    position: absolute;
+    transition: background-color .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.controller > div i{
+    font-size: 3vw;
+    color: antiquewhite;
+}
+.controller > div:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor:pointer
+}
+#left{
+    left:0
+}
+#right{
+    right:0
 }
